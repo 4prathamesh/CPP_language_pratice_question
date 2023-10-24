@@ -22,7 +22,7 @@ class PrintFibo
             j=fib;
         }
     }
-};
+}; 
 int main()
 {
     PrintFibo F;

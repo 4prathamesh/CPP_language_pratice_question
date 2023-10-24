@@ -22,7 +22,7 @@ class FindMax
             }
         }
         return max;
-    }
+    } 
 };
 int main()
 {

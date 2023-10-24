@@ -18,7 +18,7 @@ class Area
     {
         return 3.14*r*r;
     }
-};
+}; 
 int main()
 {
     Area c;

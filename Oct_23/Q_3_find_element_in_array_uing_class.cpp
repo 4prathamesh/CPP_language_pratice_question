@@ -19,7 +19,7 @@ class SearchValue
         for(int i=0;i<5;i++)
         {
             if(no==ptr[i])
-            {
+            { 
                 return i;
             }
         }
