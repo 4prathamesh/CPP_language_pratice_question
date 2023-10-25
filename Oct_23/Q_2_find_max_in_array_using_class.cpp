@@ -23,7 +23,7 @@ class FindMax
         }
         return max;
     } 
-};
+}; 
 int main()
 {
     FindMax m;

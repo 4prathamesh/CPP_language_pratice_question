@@ -25,7 +25,7 @@ class SearchValue
         }
         return -1;
     }
-};
+}; 
 int main()
 {
     SearchValue sv;
