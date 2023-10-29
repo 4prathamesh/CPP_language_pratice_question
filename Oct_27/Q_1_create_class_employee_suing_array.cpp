@@ -52,7 +52,7 @@ int main()
     char na[20],em[20];
        int p,flag=1,flag1=1,flag2=1;
        char pr[10];
-    employee E[3];
+    employee E[size];
     do{
         cout<<"1.Add multiple details in employee"<<"\n";
         cout<<"2. view all details "<<"\n";
@@ -66,7 +66,6 @@ int main()
         switch(choice)
         {
             case 1:
-            
             cout<<"enter the id, name , email, contact and salary"<<"\n";
                  for(int i=0;i<size;i++)
                  {
@@ -175,7 +174,7 @@ int main()
             {
                 if(strcmp(pr,E[i].getemail())==0)
                 {
-                    flag2=1;
+                    flag2=0;
                     for(int j=i;j<3;j++)
                     {
                         E[i]=E[i+1];
