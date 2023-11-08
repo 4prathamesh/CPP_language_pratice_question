@@ -105,7 +105,7 @@ class Vehicle
                 cout<<"\nthe vehicle fuel capacity:\n";
                 cout<<fuelC;
                 cout<<"\nthe vehicle fule consumption:\n";
-                cout<<fuelConsume;
+                cout<<fuelConsume<<"\n";
             }
 
 };
@@ -138,17 +138,33 @@ class Truck :public Vehicle
             }
 };
 
-// class Bus : public Vehicle
-// {
-//     private:
-//     int noPassenger;
+class Bus : public Vehicle
+{
+    private:
+    int noPassenger;
 
-//     public:
-//             Bus(int noPassenger)
-//             {
-//                 this->noPassenger=noPassenger;
-//             }
-// }
+    public:
+            Bus(int noPassenger)
+            {
+                this->noPassenger=noPassenger;
+            }
+
+            void setnoPassenger(int noPassenger)
+            {
+                this->noPassenger=noPassenger;
+            }
+            int getnoPassenger()
+            {
+                return noPassenger;
+            }
+
+            void display()
+            {
+                Vehicle :: display();
+                cout<<"the number of passenger in bus\n";
+                cout<<noPassenger;
+            }
+};
 
 int main()
 {
@@ -189,7 +205,7 @@ int main()
     int T;
     cout<<"\nenter the time in hr for calculat the distance\n";
     cin>>T;
-    cout<<"\nIn the "<<T<<"hr thay cover "<<v.distanceCovered(T)<<"km distance.\n";
+    cout<<"In the "<<T<<"hr thay cover "<<v.distanceCovered(T)<<"km distance.\n";
 
     v.display();
 
@@ -204,5 +220,17 @@ int main()
     t.setfuelC(fuelC);
     t.setfuelConsume(fuelConsume);
     t.display();
+
+    // class Bus----
+    int noPassenger;
+    cout<<"\nenter the number of passenger in Bus\n";
+    cin>>noPassenger;
+    Bus p(noPassenger);
+    p.setvModel(vModel);
+    p.setEno(Eno);
+    p.setVspeed(Vspeed);
+    p.setfuelC(fuelC);
+    p.setfuelConsume(fuelConsume);
+    p.display();
     return 0;
 }
