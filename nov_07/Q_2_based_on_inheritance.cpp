@@ -13,7 +13,13 @@ class Vehicle
     float fuelConsume;
     float fNeed;
     float dis;
+
     public:
+            Vehicle()
+            {
+
+            }
+
             Vehicle(char vModel[],long int Eno,float Vspeed,float fuelC,float fuelConsume)
             {
                 strcpy(this-> vModel,vModel);
@@ -89,16 +95,17 @@ class Vehicle
 
             void display()
             {
+                cout<<"\ndisplay function from a V:\n";
                 cout<<"\nvehicle model name:\n";
-                cout<<getvModel();
+                cout<<vModel;
                 cout<<"\nvehicle Registration number:\n";
-                cout<<getEno();
+                cout<<Eno;
                 cout<<"\nthe vehicle speed:\n";
-                cout<<getVspeed();
+                cout<<Vspeed;
                 cout<<"\nthe vehicle fuel capacity:\n";
-                cout<<getfuelC();
+                cout<<fuelC;
                 cout<<"\nthe vehicle fule consumption:\n";
-                cout<<getfuelConsume();
+                cout<<fuelConsume;
             }
 
 };
@@ -112,7 +119,36 @@ class Truck :public Vehicle
             {
                 this->CargoW=CargoW;
             }
+            void setCargoW(float CargoW)
+            {
+                this->CargoW=CargoW;
+            }
+            float getCargoW()
+            {
+                return CargoW;
+            }
+
+            void display()
+            {
+                cout<<"\ndisplay function from a truck:\n";
+                Vehicle::display();
+                cout<<"\ndisplay function from a truck:\n";
+                cout<<"\ncargo weight :\n";
+                cout<<CargoW;
+            }
 };
+
+// class Bus : public Vehicle
+// {
+//     private:
+//     int noPassenger;
+
+//     public:
+//             Bus(int noPassenger)
+//             {
+//                 this->noPassenger=noPassenger;
+//             }
+// }
 
 int main()
 {
@@ -133,6 +169,7 @@ int main()
     cin>>fuelC;
     cout<<"enter the vehicle fule consumption:\n";
     cin>>fuelConsume;
+    //Vehicle(char vModel[],long int Eno,float Vspeed,float fuelC,float fuelConsume)
     Vehicle v(vModel,Eno,Vspeed,fuelC,fuelConsume);
 
     v.setvModel(vModel);
@@ -141,7 +178,7 @@ int main()
     v.setfuelC(fuelC);
     v.setfuelConsume(fuelConsume);
 
-    // calculate fuel need
+    //calculate fuel need
     int dis;
     cout<<"enter the distance for calculate the amount of fule:\n";
     cin>>dis;
@@ -160,6 +197,12 @@ int main()
     float wl;
     cout<<"\nenter the cargo weight limit\n";
     cin>>wl;
-    
+    Truck t(wl);             
+    t.setvModel(vModel);
+    t.setEno(Eno);
+    t.setVspeed(Vspeed);
+    t.setfuelC(fuelC);
+    t.setfuelConsume(fuelConsume);
+    t.display();
     return 0;
 }
